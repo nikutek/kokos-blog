@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "title": "Zdobyłem Everest (prawie)",
+    "date": "2024-05-12",
+    "location": {
+      "name": "Mount Everest, Nepal",
+      "lat": 27.9881,
+      "lng": 86.9250
+    },
+    "photo": null,
+    "excerpt": "Dzisiaj ja, Kokos, postanowiłem zdobyć najwyższy szczyt świata. Było zimno, ale moje futro jest na tyle gęste, że ledwo poczułem różnicę. Na szczycie pachniało yak-iem.",
+    "content": "Dzisiaj ja, Kokos, postanowiłem zdobyć najwyższy szczyt świata. Było zimno, ale moje futro jest na tyle gęste, że ledwo poczułem różnicę. Na szczycie pachniało yak-iem. Niestety nie dotarłem na sam szczyt bo znalazłem po drodze bardzo interesującą gałąź i postanowiłem ją zabrać ze sobą na dół. Priorytety."
+  },
+  {
+    "id": 2,
+    "title": "Piwo nad basenem w Bangkoku",
+    "date": "2024-08-03",
+    "location": {
+      "name": "Bangkok, Tajlandia",
+      "lat": 13.7563,
+      "lng": 100.5018
+    },
+    "photo": null,
+    "excerpt": "Tajlandia to kraj dla psów. Ciepło, jedzenie wszędzie, a ludzie dają mi skratch za ucho bez żadnego powodu. Dziś wylegiwałem się przy basenie z drinkiem.",
+    "content": "Tajlandia to kraj dla psów. Ciepło, jedzenie wszędzie, a ludzie dają mi skratch za ucho bez żadnego powodu. Dziś wylegiwałem się przy basenie z drinkiem w łapce. Kelner patrzył na mnie dziwnie, ale trudno — kto jak nie ja zasłużył na wakacje. Jutro zwiedzam świątynię, jeśli znajdę czas między drzemkami."
+  },
+  {
+    "id": 3,
+    "title": "Noc w Paryżu",
+    "date": "2024-10-21",
+    "location": {
+      "name": "Paryż, Francja",
+      "lat": 48.8566,
+      "lng": 2.3522
+    },
+    "photo": null,
+    "excerpt": "Wieża Eiffla jest w porządku, ale szczerze? Woliłem hydrant za rogiem. Ma dużo więcej zapachów i historii niż jakikolwiek monument.",
+    "content": "Wieża Eiffla jest w porządku, ale szczerze? Woliłem hydrant za rogiem. Ma dużo więcej zapachów i historii niż jakikolwiek monument. Wieczorem spacerowałem wzdłuż Sekwany i jadłem croissanta (Zuzia powiedziała że to niezdrowe, ale co ona wie o życiu). Paryż pachnie serem i perfumami. Wróciłbym, gdyby nie fakt, że Francuzi nie dają mi skratch za ucho."
+  },
+  {
+    "id": 4,
+    "title": "Safari w Kenii",
+    "date": "2025-01-15",
+    "location": {
+      "name": "Masai Mara, Kenia",
+      "lat": -1.5044,
+      "lng": 35.1432
+    },
+    "photo": null,
+    "excerpt": "Spotkałem lwa. Lew spojrzał na mnie. Ja spojrzałem na lwa. Obaj doszliśmy do wniosku, że jesteśmy zbyt cool żeby się gonić.",
+    "content": "Spotkałem lwa. Lew spojrzał na mnie. Ja spojrzałem na lwa. Obaj doszliśmy do wniosku, że jesteśmy zbyt cool żeby się gonić. Zebry są głośne. Słonie pachną jak mokry pies, ale większy. Ogólnie safari to dobre miejsce jeśli lubisz bieganie po trawie i krzyczenie na inne zwierzęta. A ja uwielbiam jedno i drugie."
+  },
+  {
+    "id": 5,
+    "title": "Surfowanie na Hawajach",
+    "date": "2025-03-08",
+    "location": {
+      "name": "Honolulu, Hawaje",
+      "lat": 21.3069,
+      "lng": -157.8583
+    },
+    "photo": null,
+    "excerpt": "Nauczyłem się surfować w 20 minut. Ludziom zajmuje to lata. Myślę, że chodzi o środek ciężkości i cztery łapy.",
+    "content": "Nauczyłem się surfować w 20 minut. Ludziom zajmuje to lata. Myślę, że chodzi o środek ciężkości i cztery łapy. Fale na Hawajach są ogromne i solone — co odkryłem, gdy wpadłem głową w wodę. Nie polecam. Ale widok z deski jest fantastyczny. Wieczorem hula taniec na plaży. Spróbowałem się dołączyć, ale uszy mi przeszkadzały."
+  }
+]
