@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Blog from './components/Blog'
 import Gallery from './components/Gallery'
+import MapSection from './components/Map'
 
 function SectionPlaceholder({ id, label, dark }) {
   return (
@@ -22,7 +23,7 @@ function App() {
       <Hero />
       <Blog />
       <Gallery />
-      <SectionPlaceholder id="mapa" label="Mapa" />
+      <MapSection />
       <SectionPlaceholder id="urodziny" label="Urodziny" dark />
     </div>
   )
