@@ -1,6 +1,7 @@
 import './index.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Blog from './components/Blog'
 
 function SectionPlaceholder({ id, label, dark }) {
   return (
@@ -18,7 +19,7 @@ function App() {
     <div className="min-h-screen bg-cream">
       <Navbar />
       <Hero />
-      <SectionPlaceholder id="blog" label="Blog" />
+      <Blog />
       <SectionPlaceholder id="galeria" label="Galeria" dark />
       <SectionPlaceholder id="mapa" label="Mapa" />
       <SectionPlaceholder id="urodziny" label="Urodziny" dark />
