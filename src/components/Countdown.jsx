@@ -72,7 +72,7 @@ function CountdownDisplay() {
         Do urodzin {DOG_NAME} ({birthdayFormatted}) pozostało:
       </motion.p>
 
-      <div className="flex gap-4 md:gap-6">
+      <div className="flex flex-wrap justify-center gap-4 md:gap-6">
         {UNITS.map(({ key, label, rotate }, i) => (
           <motion.div
             key={key}
@@ -83,8 +83,9 @@ function CountdownDisplay() {
             style={{ rotate: `${rotate}deg` }}
             className="flex flex-col items-center gap-2"
           >
-            <div className="bg-cream border-2 border-brown/20 rounded-sm w-18 h-18 md:w-22 md:h-22 shadow-md"
-              style={{ width: '72px', height: '72px' }}
+            <div
+              className="bg-cream border-2 border-brown/20 rounded-sm shadow-md"
+              style={{ width: '68px', height: '68px' }}
             >
               <AnimatedDigit value={timeLeft[key]} />
             </div>

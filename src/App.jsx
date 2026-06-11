@@ -5,6 +5,7 @@ import Blog from './components/Blog'
 import Gallery from './components/Gallery'
 import MapSection from './components/Map'
 import Countdown from './components/Countdown'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Gallery />
       <MapSection />
       <Countdown />
+      <Footer />
     </div>
   )
 }
