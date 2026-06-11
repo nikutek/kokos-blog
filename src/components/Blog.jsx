@@ -12,8 +12,8 @@ export default function Blog() {
   const hidden = adventures.slice(VISIBLE)
 
   return (
-    <section id="blog" className="bg-cream-dark py-20 px-4">
-      <div className="max-w-5xl mx-auto px-2 md:px-8">
+    <section id="blog" className="bg-cream-dark py-28">
+      <div className="max-w-5xl mx-auto px-6 md:px-10">
 
         {/* Section header */}
         <motion.div
@@ -21,7 +21,7 @@ export default function Blog() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
           <p className="font-body text-[10px] uppercase tracking-[0.35em] text-brown/40 mb-3">
             Prosto z łapy
@@ -40,7 +40,7 @@ export default function Blog() {
         </motion.div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {visible.map((post, i) => (
             <BlogCard key={post.id} post={post} index={i} />
           ))}

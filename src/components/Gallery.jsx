@@ -132,15 +132,15 @@ export default function Gallery() {
 
   return (
     <>
-      <section id="galeria" className="bg-cream py-20">
-        <div className="max-w-5xl mx-auto px-4 md:px-8">
+      <section id="galeria" className="bg-cream py-28">
+        <div className="max-w-5xl mx-auto px-6 md:px-10">
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12 px-4"
+            className="text-center mb-16"
           >
             <p className="font-body text-[10px] uppercase tracking-[0.35em] text-brown/40 mb-3">
               Album ze wspomnień

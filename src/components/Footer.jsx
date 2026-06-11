@@ -15,7 +15,7 @@ function PawSmall() {
 
 export default function Footer() {
   return (
-    <footer className="bg-cream-dark border-t border-brown/10 py-10 px-4">
+    <footer className="bg-cream-dark border-t border-brown/10 py-14">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

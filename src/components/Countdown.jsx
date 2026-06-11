@@ -132,8 +132,8 @@ function BirthdayPlaceholder() {
 
 export default function Countdown() {
   return (
-    <section id="urodziny" className="bg-cream py-20 px-4">
-      <div className="max-w-5xl mx-auto px-2 md:px-8">
+    <section id="urodziny" className="bg-cream py-28">
+      <div className="max-w-5xl mx-auto px-6 md:px-10">
 
         {/* Header */}
         <motion.div
@@ -141,7 +141,7 @@ export default function Countdown() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
           <p className="font-body text-[10px] uppercase tracking-[0.35em] text-brown/40 mb-3">
             Wielki Dzień

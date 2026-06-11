@@ -73,8 +73,8 @@ export default function MapSection() {
   const pawIcon = useMemo(() => createPawIcon(), [])
 
   return (
-    <section id="mapa" className="bg-cream-dark py-20">
-      <div className="max-w-5xl mx-auto px-4">
+    <section id="mapa" className="bg-cream-dark py-28">
+      <div className="max-w-5xl mx-auto px-6 md:px-10">
 
         {/* Header */}
         <motion.div
@@ -82,7 +82,7 @@ export default function MapSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           <p className="font-body text-[10px] uppercase tracking-[0.35em] text-brown/40 mb-3">
             Śladem łap
