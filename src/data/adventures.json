@@ -1,67 +1,54 @@
 [
   {
     "id": 1,
-    "title": "Zdobyłem Everest (prawie)",
-    "date": "2024-05-12",
+    "title": "Zdobyłem Giewont!",
+    "date": "2024-07-15",
     "location": {
-      "name": "Mount Everest, Nepal",
-      "lat": 27.9881,
-      "lng": 86.9250
+      "name": "Giewont, Tatry",
+      "lat": 49.2508,
+      "lng": 19.9332
     },
-    "photo": null,
-    "excerpt": "Dzisiaj ja, Kokos, postanowiłem zdobyć najwyższy szczyt świata. Było zimno, ale moje futro jest na tyle gęste, że ledwo poczułem różnicę. Na szczycie pachniało yak-iem.",
-    "content": "Dzisiaj ja, Kokos, postanowiłem zdobyć najwyższy szczyt świata. Było zimno, ale moje futro jest na tyle gęste, że ledwo poczułem różnicę. Na szczycie pachniało yak-iem. Niestety nie dotarłem na sam szczyt bo znalazłem po drodze bardzo interesującą gałąź i postanowiłem ją zabrać ze sobą na dół. Priorytety."
+    "photo": "/przygody/giewont.jpg",
+    "excerpt": "Stanąłem dziś na szczycie Giewontu i powiem wam jedno — widok jest dobry, ale węch lepszy. Czuć stąd cały Zakopane i przynajmniej trzy kiełbasy.",
+    "content": "Stanąłem dziś na szczycie Giewontu i powiem wam jedno — widok jest dobry, ale węch lepszy. Czuć stąd cały Zakopane i przynajmniej trzy kiełbasy. Wchodziłem cztery łapy do przodu, co znacznie przyspieszyło marsz — ludzie koło mnie sapali z wysiłku, a ja już byłem na górze i nerwowo obwąchiwałem krzyż. Okazało się, że ktoś wcześniej jadł tu kabanos. To był dla mnie znak. Tatry pachną wolnością i bacówką. Wrócę."
   },
   {
     "id": 2,
-    "title": "Piwo nad basenem w Bangkoku",
-    "date": "2024-08-03",
+    "title": "Polska – Szwecja. Byłem, widziałem.",
+    "date": "2024-03-26",
     "location": {
-      "name": "Bangkok, Tajlandia",
-      "lat": 13.7563,
-      "lng": 100.5018
+      "name": "PGE Narodowy, Warszawa",
+      "lat": 52.2397,
+      "lng": 21.0459
     },
-    "photo": null,
-    "excerpt": "Tajlandia to kraj dla psów. Ciepło, jedzenie wszędzie, a ludzie dają mi skratch za ucho bez żadnego powodu. Dziś wylegiwałem się przy basenie z drinkiem.",
-    "content": "Tajlandia to kraj dla psów. Ciepło, jedzenie wszędzie, a ludzie dają mi skratch za ucho bez żadnego powodu. Dziś wylegiwałem się przy basenie z drinkiem w łapce. Kelner patrzył na mnie dziwnie, ale trudno — kto jak nie ja zasłużył na wakacje. Jutro zwiedzam świątynię, jeśli znajdę czas między drzemkami."
+    "photo": "/przygody/mecz.jpg",
+    "excerpt": "Wynik 0:0 nie oddaje pełni emocji. Byłem na stadionie i mogę potwierdzić: kibice krzyczeli, flagi powiewały, a ja siedziałem na fotelu i analizowałem sytuację taktyczną.",
+    "content": "Wynik 0:0 nie oddaje pełni emocji. Byłem na stadionie i mogę potwierdzić: kibice krzyczeli, flagi powiewały, a ja siedziałem na fotelu i analizowałem sytuację taktyczną. Szczerze? Gdyby wpuścili mnie na boisko, skończyłoby się inaczej — mam refleks, szybkość i potrafię biegać za piłką bez żadnego powodu. Trawy na murawie nie dało się powąchać z odległości, co było moim jedynym rozczarowaniem. 58 tysięcy ludzi, jedna łapka w górę — to ja, Kokos, patriota."
   },
   {
     "id": 3,
-    "title": "Noc w Paryżu",
-    "date": "2024-10-21",
+    "title": "Nowy Jork? Byłem. Leżałem.",
+    "date": "2024-10-05",
     "location": {
-      "name": "Paryż, Francja",
-      "lat": 48.8566,
-      "lng": 2.3522
+      "name": "Nowy Jork, USA",
+      "lat": 40.6892,
+      "lng": -74.0445
     },
-    "photo": null,
-    "excerpt": "Wieża Eiffla jest w porządku, ale szczerze? Woliłem hydrant za rogiem. Ma dużo więcej zapachów i historii niż jakikolwiek monument.",
-    "content": "Wieża Eiffla jest w porządku, ale szczerze? Woliłem hydrant za rogiem. Ma dużo więcej zapachów i historii niż jakikolwiek monument. Wieczorem spacerowałem wzdłuż Sekwany i jadłem croissanta (Zuzia powiedziała że to niezdrowe, ale co ona wie o życiu). Paryż pachnie serem i perfumami. Wróciłbym, gdyby nie fakt, że Francuzi nie dają mi skratch za ucho."
+    "photo": "/przygody/nowy_jork.jpg",
+    "excerpt": "Przepłynąłem promem obok Statuy Wolności i powiem wam — statua jest duża, ale w ogóle się nie rusza. Leżałem na pokładzie i obserwowałem ją przez dobre pięć minut. Żadnej reakcji.",
+    "content": "Przepłynąłem promem obok Statuy Wolności i powiem wam — statua jest duża, ale w ogóle się nie rusza. Leżałem na pokładzie i patrzyłem na nią przez dobre pięć minut. Żadnej reakcji. Bardzo podejrzane. Nowy Jork smakuje wiatrem i słoną wodą. Fala kołysała prom w przyjemny sposób — prawie zasnąłem. Ocena: 3/5. Wrócę gdy otworzą park specjalnie dla mnie."
   },
   {
     "id": 4,
-    "title": "Safari w Kenii",
-    "date": "2025-01-15",
+    "title": "Ekspedycja: Rossmann",
+    "date": "2024-11-20",
     "location": {
-      "name": "Masai Mara, Kenia",
-      "lat": -1.5044,
-      "lng": 35.1432
+      "name": "Rossmann, Polska",
+      "lat": 52.2297,
+      "lng": 21.0122
     },
-    "photo": null,
-    "excerpt": "Spotkałem lwa. Lew spojrzał na mnie. Ja spojrzałem na lwa. Obaj doszliśmy do wniosku, że jesteśmy zbyt cool żeby się gonić.",
-    "content": "Spotkałem lwa. Lew spojrzał na mnie. Ja spojrzałem na lwa. Obaj doszliśmy do wniosku, że jesteśmy zbyt cool żeby się gonić. Zebry są głośne. Słonie pachną jak mokry pies, ale większy. Ogólnie safari to dobre miejsce jeśli lubisz bieganie po trawie i krzyczenie na inne zwierzęta. A ja uwielbiam jedno i drugie."
-  },
-  {
-    "id": 5,
-    "title": "Surfowanie na Hawajach",
-    "date": "2025-03-08",
-    "location": {
-      "name": "Honolulu, Hawaje",
-      "lat": 21.3069,
-      "lng": -157.8583
-    },
-    "photo": null,
-    "excerpt": "Nauczyłem się surfować w 20 minut. Ludziom zajmuje to lata. Myślę, że chodzi o środek ciężkości i cztery łapy.",
-    "content": "Nauczyłem się surfować w 20 minut. Ludziom zajmuje to lata. Myślę, że chodzi o środek ciężkości i cztery łapy. Fale na Hawajach są ogromne i solone — co odkryłem, gdy wpadłem głową w wodę. Nie polecam. Ale widok z deski jest fantastyczny. Wieczorem hula taniec na plaży. Spróbowałem się dołączyć, ale uszy mi przeszkadzały."
+    "photo": "/przygody/rossmann.jpg",
+    "excerpt": "Niewielu zdobywców ośmielało się zapuścić tak daleko. Ja, Kokos, przekroczyłem próg Rossmanna i stanąłem dumnie przy kasie. Pachniało szamponem i ambicją.",
+    "content": "Niewielu zdobywców ośmielało się zapuścić tak daleko. Ja, Kokos, przekroczyłem próg Rossmanna i stanąłem dumnie przy kasie. Pachniało szamponem i ambicją. Stanąłem na tylnych łapach żeby zobaczyć co jest na ladzie — nic specjalnego, ale gest był ważny. Pani przy kasie powiedziała że jestem słodki. Ja wiem. Wróciłem z niczym, bo nie mam portfela, ale doświadczenie bezcenne. Jedno z najtrudniejszych miejsc w moim portfolio podróżniczym."
   }
 ]
