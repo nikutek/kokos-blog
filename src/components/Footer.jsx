@@ -21,7 +21,7 @@ export default function Footer() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="max-w-5xl mx-auto flex flex-col items-center gap-4 text-center"
+        className="max-w-5xl mx-auto px-6 flex flex-col items-center gap-4 text-center"
       >
         {/* Divider row */}
         <div className="flex items-center gap-3 text-brown/20">

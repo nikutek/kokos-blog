@@ -133,7 +133,7 @@ function BirthdayPlaceholder() {
 export default function Countdown() {
   return (
     <section id="urodziny" className="bg-cream py-20 px-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto px-2 md:px-8">
 
         {/* Header */}
         <motion.div

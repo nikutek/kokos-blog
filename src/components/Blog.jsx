@@ -13,7 +13,7 @@ export default function Blog() {
 
   return (
     <section id="blog" className="bg-cream-dark py-20 px-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto px-2 md:px-8">
 
         {/* Section header */}
         <motion.div

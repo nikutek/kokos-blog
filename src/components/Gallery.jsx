@@ -133,7 +133,7 @@ export default function Gallery() {
   return (
     <>
       <section id="galeria" className="bg-cream py-20">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto px-4 md:px-8">
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -164,7 +164,7 @@ export default function Gallery() {
 
             <div
               ref={scrollRef}
-              className="flex gap-4 overflow-x-auto pb-3 px-4 md:px-0 hide-scrollbar"
+              className="flex gap-4 overflow-x-auto pb-3 hide-scrollbar"
               style={{ scrollSnapType: 'x mandatory' }}
             >
               {allPhotos.map((item, i) => (
