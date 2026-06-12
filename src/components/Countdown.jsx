@@ -10,14 +10,42 @@ function getNextBirthday(dateStr) {
   return target
 }
 
-function calcTimeLeft(target) {
-  const diff = Math.max(0, target - Date.now())
+function calcTime(diffMs) {
+  const d = Math.max(0, diffMs)
   return {
-    days:    Math.floor(diff / 86400000),
-    hours:   Math.floor((diff % 86400000) / 3600000),
-    minutes: Math.floor((diff % 3600000) / 60000),
-    seconds: Math.floor((diff % 60000) / 1000),
+    days:    Math.floor(d / 86400000),
+    hours:   Math.floor((d % 86400000) / 3600000),
+    minutes: Math.floor((d % 3600000) / 60000),
+    seconds: Math.floor((d % 60000) / 1000),
   }
+}
+
+function getCurrentAge(birthdateStr) {
+  const birth = new Date(birthdateStr + 'T00:00:00')
+  const now = new Date()
+  const ageInYears = (now - birth) / (365.25 * 24 * 3600 * 1000)
+
+  let years = now.getFullYear() - birth.getFullYear()
+  let months = now.getMonth() - birth.getMonth()
+  if (now.getDate() < birth.getDate()) months--
+  if (months < 0) { years--; months += 12 }
+
+  const dogYears = ageInYears > 0
+    ? Math.round(16 * Math.log(ageInYears) + 31)
+    : 0
+
+  return { years, months, dogYears }
+}
+
+function pluralYears(n) {
+  if (n === 1) return 'rok'
+  if (n >= 2 && n <= 4) return 'lata'
+  return 'lat'
+}
+function pluralMonths(n) {
+  if (n === 1) return 'miesiąc'
+  if (n >= 2 && n <= 4) return 'miesiące'
+  return 'miesięcy'
 }
 
 function AnimatedDigit({ value }) {
@@ -27,11 +55,11 @@ function AnimatedDigit({ value }) {
       <AnimatePresence mode="popLayout">
         <motion.span
           key={padded}
-          initial={{ y: 28, opacity: 0 }}
+          initial={{ y: 24, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -28, opacity: 0 }}
-          transition={{ duration: 0.18, ease: 'easeOut' }}
-          className="font-handwriting text-4xl md:text-5xl font-bold text-foreground select-none"
+          exit={{ y: -24, opacity: 0 }}
+          transition={{ duration: 0.15, ease: 'easeOut' }}
+          className="font-handwriting text-3xl md:text-4xl font-bold select-none"
         >
           {padded}
         </motion.span>
@@ -40,19 +68,58 @@ function AnimatedDigit({ value }) {
   )
 }
 
-const UNITS = [
-  { key: 'days',    label: 'Dni',     rotate: -1.5 },
-  { key: 'hours',   label: 'Godzin',  rotate: 0.8 },
-  { key: 'minutes', label: 'Minut',   rotate: -0.6 },
-  { key: 'seconds', label: 'Sekund',  rotate: 1.2 },
+const HUMAN_UNITS = [
+  { key: 'days',    label: 'Dni',    rotate: -1.5 },
+  { key: 'hours',   label: 'Godz',   rotate:  0.8 },
+  { key: 'minutes', label: 'Min',    rotate: -0.6 },
+  { key: 'seconds', label: 'Sek',    rotate:  1.2 },
 ]
+
+const DOG_UNITS = [
+  { key: 'days',    label: 'Dni',    rotate:  1.2 },
+  { key: 'hours',   label: 'Godz',   rotate: -0.7 },
+  { key: 'minutes', label: 'Min',    rotate:  1.5 },
+  { key: 'seconds', label: 'Sek',    rotate: -1.0 },
+]
+
+function TimerGroup({ timeLeft, units, tileClass, digitClass, delay }) {
+  return (
+    <div className="flex gap-3 md:gap-4">
+      {units.map(({ key, label, rotate }, i) => (
+        <motion.div
+          key={key}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: delay + i * 0.08, duration: 0.5 }}
+          style={{ rotate: `${rotate}deg` }}
+          className="flex flex-col items-center gap-2"
+        >
+          <div className={`border-2 rounded-sm shadow-sm ${tileClass}`} style={{ width: '64px', height: '64px' }}>
+            <div className={digitClass}>
+              <AnimatedDigit value={timeLeft[key]} />
+            </div>
+          </div>
+          <span className="font-body text-[9px] uppercase tracking-[0.25em] text-muted-foreground/55">
+            {label}
+          </span>
+        </motion.div>
+      ))}
+    </div>
+  )
+}
 
 function CountdownDisplay() {
   const target = getNextBirthday(BIRTHDAY_DATE)
-  const [timeLeft, setTimeLeft] = useState(() => calcTimeLeft(target))
+  const [humanTime, setHumanTime] = useState(() => calcTime(target - Date.now()))
+  const [dogTime,   setDogTime]   = useState(() => calcTime((target - Date.now()) * 7))
 
   useEffect(() => {
-    const id = setInterval(() => setTimeLeft(calcTimeLeft(target)), 1000)
+    const id = setInterval(() => {
+      const diff = target - Date.now()
+      setHumanTime(calcTime(diff))
+      setDogTime(calcTime(diff * 7))
+    }, 1000)
     return () => clearInterval(id)
   }, [target])
 
@@ -60,43 +127,96 @@ function CountdownDisplay() {
     day: 'numeric', month: 'long',
   })
 
+  const { years, months, dogYears } = getCurrentAge(BIRTHDAY_DATE)
+  const ageHuman = months > 0
+    ? `${years} ${pluralYears(years)} i ${months} ${pluralMonths(months)}`
+    : `${years} ${pluralYears(years)}`
+
+  const isBirthday = humanTime.days === 0 && humanTime.hours === 0 && humanTime.minutes === 0 && humanTime.seconds === 0
+
   return (
-    <div className="flex flex-col items-center gap-8">
+    <div className="flex flex-col items-center gap-10 w-full">
+
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2 }}
-        className="font-body text-xs text-muted-foreground uppercase tracking-[0.25em]"
+        className="font-body text-xs text-muted-foreground uppercase tracking-[0.25em] text-center"
       >
         Do urodzin {DOG_NAME} ({birthdayFormatted}) pozostało:
       </motion.p>
 
-      <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-        {UNITS.map(({ key, label, rotate }, i) => (
-          <motion.div
-            key={key}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 + i * 0.1, duration: 0.5 }}
-            style={{ rotate: `${rotate}deg` }}
-            className="flex flex-col items-center gap-2"
-          >
-            <div
-              className="bg-card border-2 border-border rounded-sm shadow-sm"
-              style={{ width: '72px', height: '72px' }}
-            >
-              <AnimatedDigit value={timeLeft[key]} />
-            </div>
-            <span className="font-body text-[9px] uppercase tracking-[0.28em] text-muted-foreground/60">
-              {label}
-            </span>
-          </motion.div>
-        ))}
+      {/* Two timers */}
+      <div className="flex flex-col md:flex-row items-center gap-8 md:gap-10">
+
+        {/* Human timer */}
+        <div className="flex flex-col items-center gap-3">
+          <span className="font-body text-[9px] uppercase tracking-[0.3em] text-muted-foreground/50">
+            ⏱ Czas ludzki
+          </span>
+          <TimerGroup
+            timeLeft={humanTime}
+            units={HUMAN_UNITS}
+            tileClass="bg-card border-border text-foreground"
+            digitClass="w-full h-full flex items-center justify-center text-foreground"
+            delay={0.1}
+          />
+        </div>
+
+        {/* Separator */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="flex flex-col items-center gap-1.5"
+        >
+          <div className="hidden md:block h-16 w-px bg-border" />
+          <div className="bg-rose-faint border border-rose/30 rounded-sm px-2.5 py-1">
+            <span className="font-handwriting text-lg font-bold text-rose-deep">×7</span>
+          </div>
+          <div className="hidden md:block h-16 w-px bg-border" />
+          <div className="md:hidden w-16 h-px bg-border" />
+        </motion.div>
+
+        {/* Dog timer */}
+        <div className="flex flex-col items-center gap-3">
+          <span className="font-body text-[9px] uppercase tracking-[0.3em] text-muted-foreground/50">
+            🐾 Czas psi
+          </span>
+          <TimerGroup
+            timeLeft={dogTime}
+            units={DOG_UNITS}
+            tileClass="bg-rose-faint border-rose/30 text-rose-deep"
+            digitClass="w-full h-full flex items-center justify-center text-rose-deep"
+            delay={0.3}
+          />
+        </div>
       </div>
 
-      {timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0 && (
+      {/* Age labels */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.6, duration: 0.5 }}
+        className="flex flex-col items-center gap-1.5 border-t border-border pt-6 w-full max-w-sm text-center"
+      >
+        <p className="font-body text-xs text-muted-foreground">
+          {DOG_NAME} ma <span className="text-foreground font-medium">{ageHuman}</span>
+        </p>
+        <p className="font-body text-xs text-muted-foreground">
+          w psim czasie to około{' '}
+          <span className="font-handwriting text-lg font-bold text-rose-deep leading-none">{dogYears}</span>
+          {' '}psich lat
+        </p>
+        <p className="font-body text-[9px] text-muted-foreground/35 mt-0.5">
+          wg. wzoru: 16 × ln(wiek) + 31
+        </p>
+      </motion.div>
+
+      {isBirthday && (
         <motion.p
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
