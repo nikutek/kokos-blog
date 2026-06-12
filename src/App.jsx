@@ -7,10 +7,9 @@ import MapSection from './components/Map'
 import Countdown from './components/Countdown'
 import Footer from './components/Footer'
 
-
 function App() {
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-background">
       <Navbar />
       <Hero />
       <Blog />

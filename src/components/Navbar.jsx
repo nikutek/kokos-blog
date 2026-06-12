@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { DOG_NAME } from '../data/config'
+import { Button } from '@/components/ui/button'
 
 const navLinks = [
   { label: 'Blog', href: '#blog' },
@@ -20,34 +21,37 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-cream/95 backdrop-blur-sm shadow-sm' : ''}`}>
-      <div className="max-w-5xl mx-auto px-8 py-6 flex items-center justify-between">
-        <a href="#" className="font-handwriting text-2xl font-bold text-brown">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/92 backdrop-blur-sm border-b border-border' : ''}`}>
+      <div className="max-w-5xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
+        <a href="#" className="font-handwriting text-xl font-bold text-foreground">
           🐾 {DOG_NAME}
         </a>
 
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-1">
           {navLinks.map(link => (
             <li key={link.href}>
-              <a
-                href={link.href}
-                className="font-body text-xs uppercase tracking-[0.2em] text-brown hover:text-pink-dark transition-colors duration-200"
+              <Button
+                variant="ghost"
+                size="sm"
+                render={<a href={link.href} />}
+                nativeButton={false}
+                className="font-body text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground hover:bg-transparent"
               >
                 {link.label}
-              </a>
+              </Button>
             </li>
           ))}
         </ul>
 
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-1 cursor-pointer"
+        <Button
+          variant="ghost"
+          size="icon"
           onClick={() => setMenuOpen(o => !o)}
           aria-label="Otwórz menu"
+          className="md:hidden text-foreground"
         >
-          <span className={`block w-6 h-0.5 bg-brown transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-brown transition-all duration-300 ${menuOpen ? 'opacity-0 scale-x-0' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-brown transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-        </button>
+          {menuOpen ? '✕' : '☰'}
+        </Button>
       </div>
 
       <AnimatePresence>
@@ -56,19 +60,20 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25 }}
-            className="md:hidden bg-cream border-t border-cream-dark overflow-hidden"
+            transition={{ duration: 0.22 }}
+            className="md:hidden bg-background border-t border-border overflow-hidden"
           >
-            <ul className="flex flex-col py-2">
+            <ul className="flex flex-col py-2 max-w-5xl mx-auto px-6">
               {navLinks.map(link => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="block px-6 py-3 font-body text-xs uppercase tracking-[0.2em] text-brown hover:bg-cream-dark transition-colors"
+                  <Button
+                    variant="ghost"
+                    render={<a href={link.href} onClick={() => setMenuOpen(false)} />}
+                    nativeButton={false}
+                    className="w-full justify-start font-body text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground hover:bg-secondary"
                   >
                     {link.label}
-                  </a>
+                  </Button>
                 </li>
               ))}
             </ul>

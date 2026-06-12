@@ -31,7 +31,7 @@ function AnimatedDigit({ value }) {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -28, opacity: 0 }}
           transition={{ duration: 0.18, ease: 'easeOut' }}
-          className="font-handwriting text-4xl md:text-5xl font-bold text-brown select-none"
+          className="font-handwriting text-4xl md:text-5xl font-bold text-foreground select-none"
         >
           {padded}
         </motion.span>
@@ -67,7 +67,7 @@ function CountdownDisplay() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2 }}
-        className="font-body text-xs text-brown/45 uppercase tracking-[0.25em]"
+        className="font-body text-xs text-muted-foreground uppercase tracking-[0.25em]"
       >
         Do urodzin {DOG_NAME} ({birthdayFormatted}) pozostało:
       </motion.p>
@@ -84,12 +84,12 @@ function CountdownDisplay() {
             className="flex flex-col items-center gap-2"
           >
             <div
-              className="bg-cream border-2 border-brown/20 rounded-sm shadow-md"
-              style={{ width: '68px', height: '68px' }}
+              className="bg-card border-2 border-border rounded-sm shadow-sm"
+              style={{ width: '72px', height: '72px' }}
             >
               <AnimatedDigit value={timeLeft[key]} />
             </div>
-            <span className="font-body text-[9px] uppercase tracking-[0.28em] text-brown/45">
+            <span className="font-body text-[9px] uppercase tracking-[0.28em] text-muted-foreground/60">
               {label}
             </span>
           </motion.div>
@@ -100,7 +100,7 @@ function CountdownDisplay() {
         <motion.p
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          className="font-handwriting text-4xl text-pink-dark font-bold"
+          className="font-handwriting text-4xl text-rose-deep font-bold"
         >
           🎂 Wszystkiego najlepszego, {DOG_NAME}!
         </motion.p>
@@ -111,19 +111,19 @@ function CountdownDisplay() {
 
 function BirthdayPlaceholder() {
   return (
-    <div className="flex flex-col items-center gap-5">
+    <div className="flex flex-col items-center gap-4">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
         style={{ rotate: '-1.5deg' }}
-        className="border-2 border-dashed border-brown/20 rounded-sm px-10 py-7 text-center"
+        className="border-2 border-dashed border-border rounded-sm px-10 py-7 text-center"
       >
-        <p className="font-handwriting text-4xl text-brown/35 mb-1">Data urodzin</p>
-        <p className="font-handwriting text-3xl text-pink-dark/50">wkrótce...</p>
+        <p className="font-handwriting text-4xl text-foreground/30 mb-1">Data urodzin</p>
+        <p className="font-handwriting text-3xl text-rose/50">wkrótce...</p>
       </motion.div>
-      <p className="font-body text-[9px] uppercase tracking-[0.2em] text-brown/25">
+      <p className="font-body text-[9px] uppercase tracking-[0.2em] text-foreground/25">
         uzupełnij BIRTHDAY_DATE w src/data/config.js
       </p>
     </div>
@@ -132,10 +132,9 @@ function BirthdayPlaceholder() {
 
 export default function Countdown() {
   return (
-    <section id="urodziny" className="bg-cream py-28">
+    <section id="urodziny" className="bg-background py-24 md:py-32">
       <div className="max-w-5xl mx-auto px-6 md:px-10">
 
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -143,25 +142,23 @@ export default function Countdown() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="font-body text-[10px] uppercase tracking-[0.35em] text-brown/40 mb-3">
+          <p className="font-body text-[10px] uppercase tracking-[0.35em] text-foreground/35 mb-3">
             Wielki Dzień
           </p>
-          <h2 className="font-handwriting text-5xl md:text-6xl text-brown font-bold mb-4">
+          <h2 className="font-handwriting text-5xl md:text-6xl text-foreground font-bold mb-5">
             Urodziny {DOG_NAME}a
           </h2>
           <div className="flex items-center justify-center gap-3">
-            <div className="h-px w-16 bg-brown/20" />
-            <span className="text-pink-dark text-sm">🎂</span>
-            <div className="h-px w-16 bg-brown/20" />
+            <div className="h-px w-16 bg-foreground/15" />
+            <span className="text-rose text-sm">🎂</span>
+            <div className="h-px w-16 bg-foreground/15" />
           </div>
         </motion.div>
 
-        {/* Timer or placeholder */}
         <div className="flex justify-center">
           {BIRTHDAY_DATE ? <CountdownDisplay /> : <BirthdayPlaceholder />}
         </div>
 
-        {/* Footer stamp */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -169,8 +166,8 @@ export default function Countdown() {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="flex justify-center mt-16"
         >
-          <div className="border-2 border-brown/15 rounded-sm px-6 py-2 rotate-[2deg]">
-            <p className="font-body text-[9px] uppercase tracking-[0.3em] text-brown/30">
+          <div className="inline-block border border-border/50 rounded-sm px-6 py-2 rotate-[2deg]">
+            <p className="font-body text-[9px] uppercase tracking-[0.3em] text-foreground/25">
               {DOG_NAME} · World Traveller · Good Boy
             </p>
           </div>
